@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>fireflymax — 萤火之匣</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- 背景装饰 -->
+    <div class="bg-decoration" id="bgDecoration">
+        <div class="bg-grid"></div>
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+    </div>
+
+    <!-- 磨砂背景图层（默认隐藏） -->
+    <div class="bg-frosted" id="bgFrosted"></div>
+
+    <!-- 背景音乐 -->
+    <audio id="bgMusic" src="music.mp3" loop preload="auto"></audio>
+    <div class="music-control" id="musicControl" title="背景音乐">
+        <i class="fas fa-music" id="musicIcon"></i>
+        <div class="music-wave" id="musicWave">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <!-- 主容器 -->
+    <div class="main-container">
+        <!-- 头部 -->
+        <header class="site-header">
+            <div class="header-brand">
+                <span class="brand-diamond"></span>
+                <span class="brand-name">fireflymax</span>
+            </div>
+            <div class="header-subtitle">萤火之匣 · Firefly Chest</div>
+        </header>
+
+        <!-- 终端卡片 -->
+        <div class="terminal-card">
+            <!-- 输出区域 -->
+            <div class="terminal-output" id="terminalOutput">
+                <div class="output-welcome">
+                    <div class="welcome-icon">
+                        <span class="diamond-large" id="diamondToggle"></span>
+                    </div>
+                    <h2>萤火之匣</h2>
+                    <p>输入指令开始探索</p>
+                    <div class="welcome-hints">
+                        <span><code>cd</code> 导航目录</span>
+                        <span><code>cat</code> 查阅页面</span>
+                        <span><code>back</code> 返回上级</span>
+                        <span><code>kill</code> 退出页面</span>
+                        <span><code>new</code> 新建窗口</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 输入行 + 建议下拉 -->
+            <div class="terminal-input-section">
+                <div class="terminal-input-line">
+                    <span class="prompt" id="prompt">fireflymax:~$</span>
+                    <div class="input-wrapper" id="inputWrapper">
+                        <input
+                            type="text"
+                            class="terminal-input"
+                            id="terminalInput"
+                            placeholder="输入指令..."
+                            autofocus
+                            autocomplete="off"
+                            spellcheck="false"
+                        >
+                    </div>
+                </div>
+
+                <!-- 建议下拉 -->
+                <div class="suggestions-dropdown" id="suggestions">
+                    <div class="suggestions-header">与你相似的结果</div>
+                    <div class="suggestions-list" id="suggestionsList"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="site-footer">
+            <span>fireflymax © 2026</span>
+            <span class="footer-sep">·</span>
+            <span>萤火之匣 v1.0</span>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
